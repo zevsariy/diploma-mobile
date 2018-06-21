@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.zevsariy.opeditor" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>OPEditor</name>
+    <name>Редактор ОП</name>
+    <icon src="icon.png" />
     <description>
 		Редактор образовательных программ бакалавриата.
     </description>
@@ -8,7 +9,7 @@
         2TSY Project DIPLOMA
     </author>
     <content src="index.html" />
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" version="~1" />
     <access origin="*" />
     <allow-navigation href="http://diplom-tst.2tsy.ru/" />
-    <allow-navigation href="http://diplom-tst.2tsy.ru/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0" />
 </widget>
