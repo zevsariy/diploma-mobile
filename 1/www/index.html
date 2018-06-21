@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+	<!-- Enable all requests, inline styles, and eval() -->
+	<meta http-equiv="Content-Security-Policy" content="script-src: 'self' 'unsafe-inline' 'unsafe-eval' 'https://maps.google.com'">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+	
+	<link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css" />
+	
+	<link rel="stylesheet" href="./css/bootstrap.min.css" />
+	<link rel="stylesheet" href="./css/bootstrap-grey.css2" />
+	<link rel="stylesheet" href="./css/MyTheme.min.css2" />
+	
+	
+<script src="./js/jquery-1.11.1.min.js"></script>
+<script src="./js/jquery.mobile-1.4.5.min.js"></script>
+
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
+	
+	
+    <title>Hello World</title>
+</head>
+
+<body>
+   
+	<!-- Start of first page: #one -->
+	<div data-role="page" id="networkTest">
+
+		<div data-role="header">
+			<h1>Редактор ОП 0.1b1</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+		
+			<h2>Подключение к сети интернет отсутствует.</h2>
+			<button id="networkTestButton">Повторить</button>
+		</div>
+
+		<div data-role="footer" data-theme="a">
+			<h4>Page Footer</h4>
+		</div>
+	</div>
+	
+	<!-- Start of first page: #one -->
+	<div data-role="page" id="loginPage">
+		<div data-role="header">
+			<h1>Редактор ОП 0.1b1</h1>
+		</div><!-- /header -->
+		<div role="main" class="ui-content">
+			<!-- form card login -->
+			<div class="card rounded-0">
+				<div class="card-header">
+					<h3 class="mb-0">Авторизация</h3>
+				</div>
+				<div class="card-body">
+					<form class="form" role="form" autocomplete="off" id="formLogin">
+						<div class="form-group">
+							<label for="uname1">Логин</label>
+							<input type="text" class="form-control form-control-lg rounded-0" name="login" id="login" required="">
+						</div>
+						<div class="form-group">
+							<label>Пароль</label>
+							<input type="password" class="form-control form-control-lg rounded-0" id="password" name="password" required="" autocomplete="new-password">
+						</div>
+						<button type="button" class="btn btn-success btn-lg float-right" id="btnLogin">Войти</button>
+					</form>
+				</div>
+				<!--/card-block-->
+			</div>
+			<!-- /form card login -->
+		</div>
+		<div data-role="footer" data-theme="a">
+			<h4>Page Footer</h4>
+		</div>
+	</div>
+	
+	<div data-role="page" id="dashboard">
+		<div data-role="header">
+			<h1>Редактор ОП 0.1b1</h1>
+		</div><!-- /header -->
+		<div role="main" class="ui-content">
+		
+		
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+                </div>
+              </nav>
+			  
+			  
+			<h2>Дашбоард</h2>
+			
+			<div class="card dialog" onclick="OpenDialog(1);">
+			  <div class="card-header">
+				Диалог 1
+			  </div>
+			  <div class="card-body">
+				<blockquote class="blockquote mb-0">
+				  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+				  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+				</blockquote>
+			  </div>
+			</div>
+			
+			<div class="card dialog" onclick="OpenDialog(2);">
+			  <div class="card-header">
+				Диалог 2
+			  </div>
+			  <div class="card-body">
+				<blockquote class="blockquote mb-0">
+				  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+				  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+				</blockquote>
+			  </div>
+			</div>
+			
+			<div class="card dialog" onclick="OpenDialog(3);">
+			  <div class="card-header">
+				Диалог 3
+			  </div>
+			  <div class="card-body">
+				<blockquote class="blockquote mb-0">
+				  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+				  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+				</blockquote>
+			  </div>
+			</div>
+			
+		</div>
+		<div data-role="footer" data-theme="a">
+			<h4>Page Footer</h4>
+		</div>
+	</div>
+	
+	<div data-role="page" id="dialog">
+		<div data-role="header">
+			<h1>Редактор ОП 0.1b1</h1>
+		</div><!-- /header -->
+		<div role="main" class="ui-content">
+			<h2>Диалог.</h2>
+			
+			<div class="card">
+			  <div class="card-header">
+				Ткаченко Сергей Юрьевич
+			  </div>
+			  <div class="card-body">
+				<blockquote class="blockquote mb-0">
+				  <p>Привет</p>
+				</blockquote>
+			  </div>
+			</div>
+			
+			<div class="card">
+			  <div class="card-header">
+				Чикунов Иван Михайлович
+			  </div>
+			  <div class="card-body">
+				<blockquote class="blockquote mb-0">
+				  <p>Привет</p>
+				</blockquote>
+			  </div>
+			</div>
+			
+		</div>
+		<div data-role="footer" data-theme="a">
+			<h4>Page Footer</h4>
+		</div>
+	</div>
+
+
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+</body>
+
+</html>
